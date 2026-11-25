@@ -1,5 +1,122 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Sprint 2 test</title>
-<style>body{font-family:system-ui,sans-serif;background:#fff;color:#111;display:grid;place-items:center;min-height:100vh;margin:0;padding:16px}</style>
-</head><body><h1>✅ Sprint 2 page is live</h1></body></html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Venture Starter</title>
+<meta name="description" content="Sprint 2 team venture: one-page product with a live demo.">
+<style>
+  :root{
+    --bg:#f7f7f5; --surface:#ffffff; --text:#16181d; --muted:#5d6370;
+    --line:#e3e4e8; --accent:#3b5bdb; --accent-soft:#e7ecff; --warn:#b35c00; --warn-soft:#fff3e0;
+    --radius:14px;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#111317; --surface:#1a1d23; --text:#eceef2; --muted:#a2a8b5;
+      --line:#2b2f38; --accent:#8ea4ff; --accent-soft:#232b48; --warn:#ffb35c; --warn-soft:#33281a;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#111317; --surface:#1a1d23; --text:#eceef2; --muted:#a2a8b5;
+    --line:#2b2f38; --accent:#8ea4ff; --accent-soft:#232b48; --warn:#ffb35c; --warn-soft:#33281a;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--text);
+    font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+  .wrap{max-width:960px;margin:0 auto;padding:0 16px}
+  nav{display:flex;justify-content:space-between;align-items:center;padding:18px 0}
+  nav .brand{font-weight:700;letter-spacing:-.01em}
+  nav a{color:var(--muted);text-decoration:none;margin-left:16px;font-size:14px}
+  nav a:hover{color:var(--accent)}
+  .hero{padding:48px 0 40px}
+  .tag{display:inline-block;background:var(--accent-soft);color:var(--accent);
+    padding:4px 10px;border-radius:999px;font-size:13px;font-weight:600}
+  h1{font-size:clamp(32px,6vw,52px);line-height:1.1;margin:14px 0 12px;letter-spacing:-.02em}
+  .lead{font-size:clamp(17px,2.4vw,20px);color:var(--muted);max-width:620px;margin:0 0 24px}
+  .btn{display:inline-block;background:var(--accent);color:#fff;border:0;border-radius:10px;
+    padding:12px 20px;font-weight:600;font-size:15px;cursor:pointer;text-decoration:none}
+  :root[data-theme="dark"] .btn{color:#111317}
+  @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .btn{color:#111317}}
+  section{padding:36px 0;border-top:1px solid var(--line)}
+  h2{font-size:24px;margin:0 0 6px;letter-spacing:-.01em}
+  .sub{color:var(--muted);margin:0 0 20px}
+  .grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:18px}
+  .card b{display:block;margin-bottom:4px}
+  .card p{margin:0;color:var(--muted);font-size:15px}
+  .step{font-size:13px;font-weight:700;color:var(--accent);margin-bottom:6px}
+  #demo .stage{background:var(--surface);border:2px dashed var(--line);border-radius:var(--radius);
+    min-height:280px;padding:22px;display:grid;place-items:center;text-align:center}
+  .stage .hint{color:var(--muted);max-width:420px}
+  .note{background:var(--warn-soft);color:var(--warn);border-radius:10px;padding:10px 14px;font-size:14px;margin-top:14px}
+  .ask{background:var(--accent-soft);border-radius:var(--radius);padding:24px}
+  .ask h2{color:var(--accent)}
+  footer{color:var(--muted);font-size:13px;padding:28px 0 40px;border-top:1px solid var(--line)}
+  .ph{color:var(--muted);font-style:italic}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <nav>
+    <span class="brand" id="brand">Venture name</span>
+    <span><a href="#problem">Problem</a><a href="#demo">Demo</a><a href="#ask">Ask</a></span>
+  </nav>
+
+  <header class="hero">
+    <span class="tag">AI · Talent · Built in 60 minutes</span>
+    <h1>One-line promise goes here.</h1>
+    <p class="lead">Who it's for, and the single thing it changes for them, in one sentence.</p>
+    <a class="btn" href="#demo">Try the live demo ↓</a>
+  </header>
+
+  <section id="problem">
+    <h2>The problem</h2>
+    <p class="sub">One person, one bad moment.</p>
+    <div class="grid">
+      <div class="card"><b>Who has it</b><p class="ph">The person or team that feels the pain.</p></div>
+      <div class="card"><b>What it costs</b><p class="ph">Time or money lost. Real source only.</p></div>
+      <div class="card"><b>Why it's still broken</b><p class="ph">What people do today, and why it fails.</p></div>
+    </div>
+  </section>
+
+  <section id="demo">
+    <h2>Live demo</h2>
+    <p class="sub">Play with it. This is the "wow" moment.</p>
+    <div class="stage" id="stage">
+      <p class="hint">Demo goes here. One clear path: the judge does one thing and sees the result change.</p>
+    </div>
+  </section>
+
+  <section id="how">
+    <h2>How it works</h2>
+    <p class="sub">Three steps, no jargon.</p>
+    <div class="grid">
+      <div class="card"><div class="step">STEP 1</div><b>Input</b><p class="ph">What the user gives.</p></div>
+      <div class="card"><div class="step">STEP 2</div><b>AI does</b><p class="ph">What the AI does with it.</p></div>
+      <div class="card"><div class="step">STEP 3</div><b>Result</b><p class="ph">What the user gets.</p></div>
+    </div>
+  </section>
+
+  <section id="why">
+    <h2>Why now</h2>
+    <p class="sub">What AI makes possible today that it couldn't two years ago.</p>
+    <div class="grid">
+      <div class="card"><b>Shift 1</b><p class="ph">Fact + source.</p></div>
+      <div class="card"><b>Shift 2</b><p class="ph">Fact + source.</p></div>
+    </div>
+  </section>
+
+  <section id="ask" style="border-top:0">
+    <div class="ask">
+      <h2>The ask</h2>
+      <p class="ph" style="margin:0">What we'd do next, and what we need: a pilot partner, a sponsor, data.</p>
+    </div>
+    <div class="note">Limits: what this demo assumes, and its weakest point.</div>
+  </section>
+
+  <footer>Team: <span class="ph">names</span> · Built at the Epic AI Hackathon, Lisbon, 26 Nov 2026</footer>
+</div>
+</body>
+</html>
